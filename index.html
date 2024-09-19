@@ -16,103 +16,50 @@
             font-family: 'Segoe UI', sans-serif;
             background: url('https://xatimg.com/image/xnVyeKnUbozB.png') no-repeat center center fixed;
             background-size: cover;
-            color: #ffffff;
+            color: #000000; /* Text negru */
             overflow: hidden;
         }
 
         .container {
             max-width: 900px;
             margin: 50px auto;
-            background: linear-gradient(45deg, rgba(255,192,203,0.3), rgba(255,182,193,0.5)); /* Pink gradient */
+            background: rgba(255,255,255,0.8); /* White background with transparency */
             border-radius: 12px;
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
             padding: 20px;
             text-align: center;
             position: relative;
             z-index: 1;
+            display: flex; /* Flex for two equal sections */
+            gap: 20px;
         }
 
-        .header {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Sakura-inspired pink gradient */
-            color: white;
-            padding: 50px 20px;
-            border-radius: 12px 12px 0 0;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 20px #ff6ec7; /* Glow pink */
+        .half {
+            flex: 1;
+            padding: 20px;
+            border: 2px solid #ff6ec7; /* Border for the boxes */
+            border-radius: 12px;
+            background: rgba(255, 192, 203, 0.2); /* Soft pink background for sections */
         }
 
-        .header h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            animation: slideIn 1s ease-out forwards;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards;
-            animation-delay: 0.5s;
-        }
-
-        /* Avatar */
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid #ffb6c1; /* Light pink */
-            position: relative;
-            z-index: 2;
-            margin-top: -75px;
-            animation: bounceIn 1.2s ease forwards;
-            box-shadow: 0 0 20px #ff6ec7; /* Glow pink */
-            float: right;
-            margin-right: 30px;
-        }
-
-        .content {
-            text-align: left;
-            padding: 40px 20px;
-            animation: fadeInUp 1.5s ease forwards;
-        }
-
-        .content h2 {
-            font-size: 2rem;
-            color: #ff6ec7; /* Pink */
+        h2 {
+            font-size: 1.8rem;
             margin-bottom: 10px;
-            text-shadow: 0 0 10px #ff6ec7; /* Glow pink */
         }
 
-        .content p {
+        p {
             font-size: 1rem;
             line-height: 1.6;
-            color: #ffb6c1; /* Light pink */
             margin-bottom: 20px;
         }
 
-        /* Social Media Icons */
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: left;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            text-decoration: none;
-            color: white;
-            font-size: 2rem;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-icons a img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-5px);
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 3px solid #ff6ec7; /* Pink border */
+            box-shadow: 0 0 10px #ff6ec7;
         }
 
         footer {
@@ -120,7 +67,7 @@
             padding: 15px 0;
             font-size: 0.8rem;
             background: linear-gradient(45deg, rgba(255,192,203,0.3), rgba(255,182,193,0.5)); /* Gradient pink */
-            color: #999;
+            color: #000;
             border-radius: 0 0 12px 12px;
             position: relative;
         }
@@ -148,29 +95,6 @@
             0% { transform: translateY(-50px) rotate(0deg); }
             100% { transform: translateY(100vh) rotate(360deg); }
         }
-
-        @keyframes slideIn {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes bounceIn {
-            0% { transform: scale(0.3); }
-            50% { transform: scale(1.1); }
-            80% { transform: scale(0.9); }
-            100% { transform: scale(1); }
-        }
-
     </style>
 </head>
 <body>
@@ -179,39 +103,25 @@
     <div id="petals-container"></div>
 
     <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <h1>Sakura Anime Gamer Girl</h1>
-            <p>Let’s dive into the world of gaming and cherry blossoms!</p>
+        <!-- My Profile Section -->
+        <div class="half">
+            <h2>My Profile</h2>
+            <img src="https://xatimg.com/image/xuyFRFvYFPGX.png" alt="Profile Picture" class="avatar">
+            <p>Hello, I'm [Your Name], a passionate gamer and anime lover. I spend my time playing games like <strong>Genshin Impact</strong> and <strong>Animal Crossing</strong>, surrounded by beautiful sakura blossoms.</p>
         </div>
 
-        <!-- Profile Picture -->
-        <img src="https://xatimg.com/image/xuyFRFvYFPGX.png" alt="Profile Picture" class="profile-picture">
-        
-        <!-- Main Content -->
-        <div class="content">
-            <h2>Hi, I'm [Your Name]!</h2>
-            <p>I'm an anime lover and a dedicated gamer. I enjoy spending my time playing games like <strong>Genshin Impact</strong> and <strong>Animal Crossing</strong>, all while being surrounded by cherry blossoms. Join me on my gaming adventures!</p>
-            
-            <!-- Social Media Icons -->
-            <div class="social-icons">
-                <a href="https://twitch.com" target="_blank">
-                    <img src="https://image.flaticon.com/icons/png/512/2111/2111668.png" alt="Twitch">
-                </a>
-                <a href="https://instagram.com" target="_blank">
-                    <img src="https://image.flaticon.com/icons/png/512/2111/2111463.png" alt="Instagram">
-                </a>
-                <a href="https://twitter.com" target="_blank">
-                    <img src="https://image.flaticon.com/icons/png/512/733/733579.png" alt="Twitter">
-                </a>
-            </div>
+        <!-- My Married Section -->
+        <div class="half">
+            <h2>My Married</h2>
+            <img src="https://xatimg.com/image/xuyFRFvYFPGX.png" alt="Married Avatar" class="avatar">
+            <p>Married to [Partner's Name]. Together, we embark on epic gaming adventures and share our love for anime and gaming culture.</p>
         </div>
-        
-        <!-- Footer Section -->
-        <footer>
-            <p>© 2024 Sakura Gamer | <a href="#">Contact</a></p>
-        </footer>
     </div>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Sakura Gamer | <a href="#">Contact</a></p>
+    </footer>
 
     <script>
         // Animation for custom petals
