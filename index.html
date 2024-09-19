@@ -134,12 +134,12 @@
             text-decoration: underline;
         }
 
-        /* Sakura Petals Animation */
-        .sakura-petal {
+        /* Custom Petals with New Image */
+        .petal {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: url('https://xatimg.com/image/xnVyeKnUbozB.png') no-repeat center/contain;
+            width: 30px;
+            height: 30px;
+            background: url('https://xatimg.com/image/Hv43Olv45E9t.png') no-repeat center/contain;
             animation: fall linear infinite;
             opacity: 0.9;
         }
@@ -175,8 +175,8 @@
 </head>
 <body>
 
-    <!-- Sakura Petals -->
-    <div id="sakura-petals"></div>
+    <!-- Petals Animation -->
+    <div id="petals-container"></div>
 
     <div class="container">
         <!-- Header Section -->
@@ -214,22 +214,22 @@
     </div>
 
     <script>
-        // Sakura Petals Animation
+        // Animation for custom petals
         const numberOfPetals = 20;
-        const sakuraContainer = document.getElementById('sakura-petals');
+        const petalContainer = document.getElementById('petals-container');
 
         function createPetal() {
             const petal = document.createElement('div');
-            petal.classList.add('sakura-petal');
+            petal.classList.add('petal');
             const size = Math.random() * 15 + 10;
             petal.style.width = `${size}px`;
             petal.style.height = `${size}px`;
             petal.style.left = `${Math.random() * window.innerWidth}px`;
             petal.style.animationDuration = `${Math.random() * 5 + 5}s`;
-            sakuraContainer.appendChild(petal);
+            petalContainer.appendChild(petal);
 
             setTimeout(() => {
-                sakuraContainer.removeChild(petal);
+                petalContainer.removeChild(petal);
             }, 10000);
         }
 
