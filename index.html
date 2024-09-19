@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Girl XatSpace</title>
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(192,192,192,0.4)); /* Gradient argintiu */
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8a2be2, #6a0dad); /* Degrade mov */
+            color: white;
+            padding: 50px 20px;
+            border-radius: 12px 12px 0 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px #8a2be2; /* Glow purple */
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Gaming Console Icon */
+        .gaming-icon {
+            font-size: 80px;
+            color: #8a2be2;
+            margin: 20px auto;
+            text-shadow: 0 0 10px #8a2be2; /* Glow */
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #dcdcdc; /* Argintiu */
+            position: relative;
+            z-index: 2;
+            margin-top: -75px;
+            animation: bounceIn 1.2s ease forwards;
+            box-shadow: 0 0 20px #8a2be2; /* Glow purple */
+        }
+
+        .content {
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeInUp 1.5s ease forwards;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: #8a2be2; /* Mov */
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #8a2be2; /* Glow purple */
+        }
+
+        .content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #dcdcdc; /* Argintiu */
+            margin-bottom: 20px;
+        }
+
+        /* Gaming Icons */
+        .gaming-setup {
+            font-size: 50px;
+            margin-top: 20px;
+            color: #dcdcdc; /* Argintiu */
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .gaming-setup i:hover {
+            color: #8a2be2; /* Mov la hover */
+            transform: scale(1.2);
+            transition: all 0.3s ease;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 2rem;
+            color: #8a2be2; /* Mov */
+            margin: 0 15px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #dcdcdc; /* Argintiu */
+            transform: translateY(-5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.8rem;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(192,192,192,0.4)); /* Gradient argintiu */
+            color: #999;
+            border-radius: 0 0 12px 12px;
+            position: relative;
+        }
+
+        footer a {
+            color: #8a2be2; /* Mov */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Gradient Animation */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container, footer {
+            background-size: 200% 200%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        /* Glass Break Effect */
+        .glass-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .glass-shard {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform-origin: center;
+            animation: fall 4s infinite ease-in-out;
+            box-shadow: 0 0 10px #8a2be2; /* Glow purple for shards */
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); }
+            50% { transform: scale(1.1); }
+            80% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fall {
+            0% { transform: scale(0.8) rotate(0deg) translateY(-100px); }
+            100% { transform: scale(0.8) rotate(720deg) translateY(110vh); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-container" id="glassContainer"></div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Gamer Girl Xatspace!</h1>
+            <p>Let's level up and win the game!</p>
+        </div>
+
+        <!-- Gaming Console Icon -->
+        <div class="gaming-icon">
+            🎮
+        </div>
+
+        <!-- Profile Picture -->
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-picture">
+        
+        <!-- Main Content -->
+        <div class="content">
+            <h2>Salut! Eu sunt [Numele Tău]</h2>
+            <p>Sunt o fată pasionată de gaming, streaming și tehnologie. Ador să petrec ore în jocuri ca <strong>League of Legends</strong> și <strong>Valorant</strong>. Alătură-te comunității mele de gaming!</p>
+            
+            <!-- Gaming Icons -->
+            <div class="gaming-setup">
+                <i>🖥️</i> <!-- PC -->
+                <i>🎧</i> <!-- Headset -->
+                <i>🕹️</i> <!-- Joystick -->
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="https://twitch.com" target="_blank">📺</a>
+                <a href="https://instagram.com" target="_blank">📸</a>
+                <a href="https://twitter.com" target="_blank">🐦</a>
+            </div>
+        </div>
+        
+        <!-- Footer Section -->
+        <footer>
+            <p>© 2024 Gamer Girl | <a href="#">Contact</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript to create glass shards and animate them
+        const glassContainer = document.getElementById('glassContainer');
+        
+        function createShard() {
+            const shard = document.createElement('div');
+            shard.classList.add('glass-shard');
+            const size = Math.random() * 150 + 50;
+            shard.style.width = `${size}px`;
+            shard.style.height = `${size / 2}px`;
+            shard.style.top = `${Math.random() * window.innerHeight}px`;
+            shard.style.left = `${Math.random() * window.innerWidth}px`;
+            shard.style.transform = `rotate(${Math.random() * 360}deg)`;
+            shard.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            shard.style.animationDelay = `${Math.random() * 3}s`;
+            glassContainer.appendChild(shard);
+
+            setTimeout(() => {
+                glassContainer.removeChild(shard);
+            }, 5000);
+        }
+
+        setInterval(createShard, 300);
+    </script>
+
+</body>
+</html>
